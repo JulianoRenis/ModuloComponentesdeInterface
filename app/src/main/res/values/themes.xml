@@ -6,4 +6,15 @@
     </style>
 
     <style name="Theme.ModuloComponentesDeInterface" parent="Base.Theme.ModuloComponentesDeInterface" />
+
+    <style name="buttonItemProdutoStyle" >
+        <item name="android:background">@color/amarelo</item>
+        <item name="android:tintMode">@color/amarelo</item>
+        <item name="android:tint">@color/amarelo</item>
+        <item name="android:radius">10dp</item>
+       <item name="android:shape">rectangle</item>
+        <item name="tint">@color/amarelo</item>
+    </style>
+
+
 </resources>
