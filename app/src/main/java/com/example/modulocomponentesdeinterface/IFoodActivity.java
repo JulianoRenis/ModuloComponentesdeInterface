@@ -2,6 +2,7 @@ package com.example.modulocomponentesdeinterface;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import java.util.List;
 public class IFoodActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
+    private RecyclerView recyclerView2;
     private List<Produto>  listaProdutos= new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +25,20 @@ public class IFoodActivity extends AppCompatActivity {
 
         criarProdutos();
         recyclerView = findViewById(R.id.rcView);
+        recyclerView2 = findViewById(R.id.rv2);
 
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(listaProdutos);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(),3,RecyclerView.VERTICAL,false);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(recyclerViewAdapter);
+
+
+        RecyclerViewAdapter recyclerViewAdapter2 = new RecyclerViewAdapter(listaProdutos);
+        RecyclerView.LayoutManager layoutManager2 = new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
+        recyclerView2.setLayoutManager(layoutManager2);
+        recyclerView2.setHasFixedSize(true);
+        recyclerView2.setAdapter(recyclerViewAdapter2);
     }
 
     public void criarProdutos(){
